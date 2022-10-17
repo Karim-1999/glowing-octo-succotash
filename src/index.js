@@ -1,10 +1,7 @@
-import React from "react";
-import { Hello } from "./components/hello";
+import ReactDOM from "react-dom/client"
+import { App } from "./app"
 
 
 
-export class App extends React.Component{
-  render(){
-    return <Hello />
-  }
-}
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+root.render(<App />)
