@@ -8,5 +8,5 @@ export class Buttons extends React.Component{
 
 Buttons.defaultProps = {
   clickHandler : () => {console.log('')},
-  text: 'Cliccami'
+  text: 'Cliccami 1'
 }
