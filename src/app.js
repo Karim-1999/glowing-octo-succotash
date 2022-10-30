@@ -3,7 +3,7 @@ import { Hello } from "./components/hello";
 import { Welcome } from "./components/welcome";
 
 
-var name="Karim"
+var name="John"
 
 
 export class App extends React.Component{
@@ -11,7 +11,7 @@ export class App extends React.Component{
     return(
       <div>
         <Hello />
-        <Welcome name={ <strong>{name}</strong>  } age={22} />
+        <Welcome name={ name } age={22} />
       </div>
     )
   }
