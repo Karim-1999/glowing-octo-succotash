@@ -20,7 +20,7 @@ render(){
         <Buttons clickHandler = { this.tracker } text='Uno' />
         <Buttons clickHandler = { this.tracker } text='Due' />
         <Buttons clickHandler = { this.tracker } text='Tre' />
-        <h1>Last clicked: { this.state.lastPressed }</h1>
+        <h1> ultimo cliccato: { this.state.lastPressed }</h1>
     </div>
     )
 }
