@@ -21,17 +21,26 @@ export default class TodoList extends React.Component {
         })
     }
 
+
+    resetAll = (event) => {
+        this.setState({
+            items: ['']
+        })
+    } 
+
+
 render() {
     return(
         <>
-        <div>
+        
             <h1>Cose da fare:</h1>
             <ul>
                 {  this.state.items.map((el,i) => <li key={el+i}>{el}</li>)}
             </ul>
             <input type='text' onChange={this.addItem} value={this.state.newItem} />
             <button onClick={this.addEvent} disabled={!this.state.newItems}>Aggiungi altro</button>
-        </div>
+            <button onClick={this.resetAll}>RESET!</button>
+        
 
         </>
     )
