@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
 
 export default class Container extends React.Component {
     render() {
-        return  <div className="parent">
-                    {this.props.children}
-                </div>
+        return (
+            <div className="parent">
+                <h1>{this.props.title}</h1>
+                {this.props.children}
+            </div>
+        );
+      
     }
 }
