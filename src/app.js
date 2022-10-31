@@ -28,7 +28,7 @@ export class App extends React.Component{
         <Login />
         <UncontrolledLogin /> 
         <TodoList /> 
-        <Container  title='TITOLO' /> 
+        <Container  title='TITOLO molto grand e carino' /> 
       </div>
     )
   }
