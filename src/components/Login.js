@@ -44,7 +44,7 @@ render() {
         <input name='password' id='password' type='password' onChange = { this.handleChange } value = { this.state.password } />
         <input name='remember' type='checkbox' onChange = { this.handleChange } checked = { this.state.remember } />
 
-        <button name='login' type = 'button' onClick = { this.handleLogin } disabled = { this.state.loginButtonState } >Login</button>
+        <button data-testid="login" disabled = {!this.state.username || !this.state.password} onClick={this.loginButtonClick} style={{backgroundColor: this.state.password.length < 8 ? 'red' : 'green'}}>LogIn!!</button>
 
         <button name = 'reset' type = 'button' onClick = { this.handleReset } >Reset</button>
     </div>
