@@ -30,7 +30,7 @@ render() {
                 {  this.state.items.map((el,i) => <li key={el+i}>{el}</li>)}
             </ul>
             <input type='text' onChange={this.addItem} value={this.state.newItem} />
-            <button onClick={this.addEvent}>Aggiungi altro</button>
+            <button onClick={this.addEvent} disabled={!this.state.newItems}>Aggiungi altro</button>
         </div>
 
         </>
