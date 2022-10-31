@@ -1,44 +1,56 @@
-import React from "react";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-
-
-export class UncontrolledLogin extends React.Component {
-
-    handleFormSubmit = (event) => {
-        event.preventDefault()
-
-        const username = event.target.elements.username.value
-        const password = event.target.elements.password.value
-        const remember = event.target.elements.remember.checked
-    
-    console.log({username,password,remember})
+const root = ReactDOM.createRoot(document.querySelector('#root'))
+export default class UncontrolledLogin extends React.Component {
+    state = {
+        username: "",
+        password: "",
+        remember: false
     }
 
+    handleUsernameInputChange = (event) => {
+        this.setState({username: event.target.value})
+    }
+
+    handlePasswordInputChange = (event) => {
+        this.setState({password: event.target.value})
+    }
+
+    handleRememberInputChange = (event) => {
+        this.setState({remember: event.target.checked})
+    }
+
+    resetAll = () => {
+        this.setState({
+            username: "",
+        password: "",
+        remember: false
+        })
+    }
+
+    onLogin = (event) => {
+		event.preventDefault()
+		console.log(this.state)
+	}
+
+    componentDidMount() {
+        this.searchInput.focus()
+    }
 
     render() {
         return (
-            <>
-                <h3>UncontrolledLogin</h3>
-                <form onSubmit={this.handleFormSubmit}>
-                    <input
-                        name="username"
-                    />
-                    <input
-                        name="password"
-                        type="password"
-                    />
-                    <input
-                        name="remember"
-                        type="checkbox"
-                    />
-                    <button type="submit">
-                        Submit
-                    </button>
-                    <button type="reset">
-                        Reset
-                    </button>
-                </form>
-            </>
+            <div>
+                <input ref={inputEl => (this.searchInput = inputEl)} name='username' placeholder='username' value={this.state.username} onChange={this.handleUsernameInputChange}/>
+                <input name='password' placeholder='password' type='password' value={this.state.password} onChange={this.handlePasswordInputChange}/>
+                <input name='remember' type='checkbox' checked={this.state.remember} onChange={this.handleRememberInputChange}/>
+                
+                <button type="submit" disabled = {!this.state.username || !this.state.password} onClick={this.onLogin}>LogIn!!</button>
+                <button onClick={this.resetAll}>Reset!</button>
+            </div>
         )
     }
 }
+
+root.render(<UncontrolledLogin />)
+
