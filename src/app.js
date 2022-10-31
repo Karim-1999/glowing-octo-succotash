@@ -25,13 +25,40 @@ export class App extends React.Component{
         <ClickCounter />
         <ClickTracker /> 
         <InteractiveWelcome /> 
-        <Login />
         <UncontrolledLogin /> 
-        <TodoList /> 
-        <Container  title='TITOLO molto grand e carino' /> 
-      </div>
-    )
+        <Container title='TITOLO molto grand e carino' />
+        <TodoList
+            render = 
+            {(items, newState, deleteState) => {
+              const Copy = [...items.items];
+              return (
+                <ul className="list">
+                  {Copy.map((el, i) => (
+                    <div key={i}>
+                      <li>
+                        {el}
+                        <button
+                          onClick={() => {
+                            deleteState(Copy, i);
+                            newState(Copy);
+                          }}
+                        >
+                          Delete
+                        </button>
+                      </li>
+                    </div>
+                  ))}
+                </ul>
+              );
+            }}
+            setState=""
+          />
+          <Login />
+        </div> 
+      
+    );
   }
 }
+   
 
 /* console.log(Welcome) */
