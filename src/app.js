@@ -5,6 +5,7 @@ import Container from "./components/Container";
 import { Counter } from "./components/Counter";
 import { Hello } from "./components/hello";
 import { InteractiveWelcome } from "./components/InteractiveWelcome";
+import { LenguageContext } from "./components/LanguageContext";
 import { Login } from "./components/Login.js";
 import TodoList from "./components/ToDoList";
 import UncontrolledLogin from "./components/UncontrolledLogin";
@@ -15,10 +16,31 @@ import { Welcome } from "./components/welcome";
 var name="John"
 
 
+
+
 export class App extends React.Component{
+
+
+  state = {
+    language: 'en'
+  }
+  
+  handleLenguageChange = (event) => {
+    this.setState({
+        language: event.target.value
+    })
+  }
+
+
   render(){
     return(
       <div>
+        <select value={this.state.language} onChange={this.handleLenguageChange}>
+        <option value='en'>English</option>
+        <option value='it'>Italiano</option>
+      </select>
+        <LenguageContext.Provider value={this.state.language}>
+        
         <Hello />
         <Welcome name={name} age={22} />
         <Counter initialCount={ 1 } incrementAmount={ 1 } incrementInterval={ 500 } />
@@ -53,7 +75,8 @@ export class App extends React.Component{
             }}
             setState=""
           />
-          <Login />
+        <Login />
+        </LenguageContext.Provider>
         </div> 
       
     );
