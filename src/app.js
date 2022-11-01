@@ -11,6 +11,7 @@ import TodoList from "./components/ToDoList";
 import UncontrolledLogin from "./components/UncontrolledLogin";
 
 import { Welcome } from "./components/welcome";
+import { Welcomef } from "./components/Welcomef";
 
 
 var name="John"
@@ -77,6 +78,7 @@ export class App extends React.Component{
           />
         <Login />
         </LanguageContext.Provider>
+        <Welcomef/> 
         </div> 
       
     );
