@@ -1,5 +1,6 @@
 import React from "react";
 import { ClickCounter } from "./components/ClickCounter";
+import { Count } from "./components/Count";
 
 import { LoginForm } from "./components/Login.js";
 import { Sum } from "./components/Sum";
@@ -39,6 +40,7 @@ export class App extends React.Component{
         <Sum numbers = {[1,2,3,4,5,6,7 ]}/>
         <Sum />
         <ClickCounter />
+        <Count/> 
         </div> 
       
     );
