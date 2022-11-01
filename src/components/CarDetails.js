@@ -1,4 +1,4 @@
-import { useRef } from "react";
+/* import { useRef } from "react";
 
 export function CarDetails({ initialData }) {
   const refModel = useRef(initialData.model)
@@ -26,4 +26,4 @@ export function CarDetails({ initialData }) {
       </form>
     </div>
   )
-}
+} */
