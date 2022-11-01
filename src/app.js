@@ -4,6 +4,7 @@ import { Welcome } from "./components/Welcomef";
 import { Route, Routes } from 'react-router-dom';
 import { ShowGithubUser } from "./components/ShowGithubUser";
 import { Link } from "react-router-dom";
+import { GithubUserList } from "./components/GithubUserList";
 
 
 
@@ -20,12 +21,17 @@ export class App extends React.Component {
         <Routes>
           <Route path="/" element={<Welcome name="Jimmy"/>} />
           <Route path="/counter" element={<ClickCounter />} />
-          <Route path="/:username" element={<ShowGithubUser />} />
-          <Route path="*" element={
-            <div>
-              <p>Not Found!</p>
-            </div>
-          } />
+          <Route path="/users" element={<GithubUserList />}>
+            <Route path="/:username" element={<ShowGithubUser />} />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <div>
+                <p>Not Found!</p>
+              </div>
+            }
+          />
         </Routes>
       </>
     );
