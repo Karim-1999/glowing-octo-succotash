@@ -6,7 +6,7 @@ import { Counter } from "./components/Counter";
 import { Hello } from "./components/hello";
 import { InteractiveWelcome } from "./components/InteractiveWelcome";
 import { LanguageContext } from "./components/LanguageContext";
-import { Login } from "./components/Login.js";
+import { LoginForm } from "./components/Login.js";
 import { Sum } from "./components/Sum";
 import TodoList from "./components/ToDoList";
 import UncontrolledLogin from "./components/UncontrolledLogin";
@@ -77,7 +77,7 @@ export class App extends React.Component{
             }}
             setState=""
           />
-        <Login />
+        <LoginForm />
         </LanguageContext.Provider>
         <Welcomef /> 
         <Sum numbers = {[1,2,3,4,5,6,7 ]}/>
