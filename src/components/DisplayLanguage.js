@@ -1,22 +1,25 @@
 import React from "react";
+import { LanguageContext } from "./LanguageContext";
 
-
-export default class DisplayLanguage extends React.Component {
-    render() {
-        state = {
-            language: 'en'
+const string = {
+    en: {
+            CURRENT_LANGUAGE: "The selected language is: "
+        },
+    it: {
+            CURRENT_LANGUAGE: "La lingua selezionata è: "
         }
     }
 
-    handleLenguageChange = (lenguage) => {
-        this.setState({
-            language,
-        })
+    export default class DisplayLanguage extends React.Component {
+        render() {
+        return(
+                <div>
+                    <LanguageContext.Consumer>
+                        {(language) => {
+                            return <h1> {string[language].CURRENT_LANGUAGE} {language}</h1>
+                        }}
+                    </LanguageContext.Consumer>
+                </div>
+            )
+        }
     }
-
-    return(
-        <languageContext.Provider value = {this.state.language}>
-        <languageSelector onLanguageChange = {this.handleLenguageChange}/>
-        </languageContext>
-    )
-}
