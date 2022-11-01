@@ -1,3 +1,7 @@
-export function Welcomef() {
-    return <h1>HELLO WORLD</h1>;
-}
+export function Welcome(name = 'Jimmy') {
+    return (
+        <div>
+            <h1>Hello, {name}</h1>
+        </div>
+    )
+} 
