@@ -2,6 +2,7 @@ import React from "react";
 import { ClickCounter } from "./components/ClickCounter";
 import { Count } from "./components/Count";
 import { GithubUser } from "./components/GithubUser";
+import { GithubUserList } from "./components/GithubUserList";
 
 import { LoginForm } from "./components/Login.js";
 import { Sum } from "./components/Sum";
@@ -42,7 +43,8 @@ export class App extends React.Component{
         <Sum />
         <ClickCounter />
         <Count />
-        <GithubUser/> 
+        <GithubUser />
+        <GithubUserList/> 
         </div> 
       
     );
