@@ -1,13 +1,21 @@
-import { useGithubUser } from "./useGithubUser";
+import { useSWR } from "swr";
 
-export function GithubUser({ username }) {
-const { user, loading, error, onFetchUser } = useGithubUser(username);
+const fetcher = (url) => fetch(url).then((respons) => respons.json())
 
-return (
-    <div onChange={onFetchUser}>
-    {loading && <h1>Loading...</h1>}
-    {error && <h1>There has been an error: {error.message}</h1>}
-    {user && <h1>{user.name}</h1>}
-    </div>
-);
-}
+export function GithubUser() {
+    const { data, error, isLoading } = useSWR(`https://api.github.com/users`, fetcher)
+    return (
+        <div>
+        {isLoading && <h3>Loading...</h3>}
+        {error && <h3>An error has occurred</h3>}
+        {data && !error && (
+        <ul>
+          {data.map((user) => (
+            <li key={user.login}>{user.login}</li>
+            ))}
+            </ul>
+        )}
+        </div>
+        
+        )
+    }

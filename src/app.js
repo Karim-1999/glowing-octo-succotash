@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { ShowGithubUser } from "./components/ShowGithubUser";
 import { Link } from "react-router-dom";
 import { GithubUserList } from "./components/GithubUserList";
+import { GithubUser } from "./components/GithubUser";
 
 
 
@@ -23,6 +24,7 @@ export function App() {
           <Route path="/:username" element={<ShowGithubUser />} />
           <Route index element={<h3>Add a user and select it</h3>} />
         </Route>
+        <Route path="users" element={<GithubUser />} />
         <Route
           path="*"
           element={
