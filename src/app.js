@@ -1,4 +1,5 @@
 import React from "react";
+import { CarDetails } from "./components/CarDetails";
 import { ClickCounter } from "./components/ClickCounter";
 import { Count } from "./components/Count";
 import { FilteredList } from "./components/FilteredList";
@@ -47,7 +48,8 @@ export class App extends React.Component{
         <GithubUser />
         <GithubUserList />
         <Login />
-        <FilteredList/> 
+        <FilteredList /> 
+        <CarDetails initialData={{ model: "Smart", year: 2006, color: "Blue" }} />
         </div> 
       
     );
