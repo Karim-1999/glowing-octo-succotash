@@ -1,6 +1,7 @@
 import React from "react";
 import { ClickCounter } from "./components/ClickCounter";
 import { Count } from "./components/Count";
+import { FilteredList } from "./components/FilteredList";
 import { GithubUser } from "./components/GithubUser";
 import { GithubUserList } from "./components/GithubUserList";
 
@@ -45,7 +46,8 @@ export class App extends React.Component{
         <Count />
         <GithubUser />
         <GithubUserList />
-        <Login /> 
+        <Login />
+        <FilteredList/> 
         </div> 
       
     );
