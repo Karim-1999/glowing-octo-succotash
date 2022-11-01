@@ -5,7 +5,7 @@ import Container from "./components/Container";
 import { Counter } from "./components/Counter";
 import { Hello } from "./components/hello";
 import { InteractiveWelcome } from "./components/InteractiveWelcome";
-import { LenguageContext } from "./components/LanguageContext";
+import { LanguageContext } from "./components/LanguageContext";
 import { Login } from "./components/Login.js";
 import TodoList from "./components/ToDoList";
 import UncontrolledLogin from "./components/UncontrolledLogin";
@@ -39,7 +39,7 @@ export class App extends React.Component{
         <option value='en'>English</option>
         <option value='it'>Italiano</option>
       </select>
-        <LenguageContext.Provider value={this.state.language}>
+        <LanguageContext.Provider value={this.state.language}>
         
         <Hello />
         <Welcome name={name} age={22} />
@@ -76,7 +76,7 @@ export class App extends React.Component{
             setState=""
           />
         <Login />
-        </LenguageContext.Provider>
+        </LanguageContext.Provider>
         </div> 
       
     );
