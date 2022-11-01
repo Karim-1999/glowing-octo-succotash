@@ -46,7 +46,7 @@ export class App extends React.Component{
         <Hello />
         <Welcome name={name} age={22} />
         <Counter initialCount={ 1 } incrementAmount={ 1 } incrementInterval={ 500 } />
-        <ClickCounter />
+        
         <ClickTracker /> 
         <InteractiveWelcome /> 
         <UncontrolledLogin /> 
@@ -82,6 +82,7 @@ export class App extends React.Component{
         <Welcomef /> 
         <Sum numbers = {[1,2,3,4,5,6,7 ]}/>
         <Sum />
+        <ClickCounter />
         </div> 
       
     );
