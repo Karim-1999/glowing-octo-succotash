@@ -2,6 +2,7 @@ import React from "react";
 import { CarDetails } from "./components/CarDetails";
 import { ClickCounter } from "./components/ClickCounter";
 import { Count } from "./components/Count";
+import DisplayLanguage from "./components/DisplayLanguage";
 import { FilteredList } from "./components/FilteredList";
 import { GithubUser } from "./components/GithubUser";
 import { GithubUserList } from "./components/GithubUserList";
@@ -50,6 +51,7 @@ export class App extends React.Component{
         <Login />
         <FilteredList /> 
         <CarDetails initialData={{ model: "Smart", year: 2006, color: "Blue" }} />
+        <DisplayLanguage />
         </div> 
       
     );
